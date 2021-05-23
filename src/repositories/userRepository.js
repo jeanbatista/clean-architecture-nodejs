@@ -1,8 +1,6 @@
-const UserEntity = require("../../entities/userEntity");
-
 const users = [];
 
-module.exports = class MongoUserRepository {
+module.exports = class UserRepository {
     /**
      * 
      * @param {string} email 

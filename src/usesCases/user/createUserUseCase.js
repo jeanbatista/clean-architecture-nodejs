@@ -1,19 +1,13 @@
-const CreateUserDTO = require('./createUserDTO');
-const UserRepository = require('../../../repositories/userRepository');
-const { UserEntity } = require('../../../entities');
+const { UserEntity } = require('../../entities');
 
-module.exports = class CreateUserUserCase {
-    /**
-     * 
-     * @param {UserRepository} userRepository 
-     */
+module.exports = class CreateUserUseCase {
     constructor(userRepository) {
         this.userRepository = userRepository;
     }
 
     /**
      * 
-     * @param {CreateUserDTO} data 
+     * @param {{ name:string,email:string,password:string }} data 
      */
     async execute(data) {
         const userAlreadyExists = await this.userRepository.findByEmail(data.email);

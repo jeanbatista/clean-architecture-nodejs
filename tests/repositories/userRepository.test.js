@@ -1,5 +1,7 @@
-const { userData } = require('../../src/data');
+const { UserRepository } = require('../../src/repositories');
 const { UserEntity } = require('../../src/entities');
+
+const userRepository = new UserRepository();
 
 test('Should create user', async () => {
     const user = new UserEntity({
@@ -7,7 +9,7 @@ test('Should create user', async () => {
         email: 'jose@email.com',
         password: 'Muda@123'
     });
-    await userData.save(user);
-    const userExists = await userData.findByEmail(user.email);
+    await userRepository.save(user);
+    const userExists = await userRepository.findByEmail(user.email);
     expect(userExists.email).toBe(user.email);
 });
