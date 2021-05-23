@@ -19,7 +19,7 @@ describe('Testes Create User Use Case', () => {
                 password: 'Mud@123'
             });        
         } catch (err) {
-            expect(err.message).toBe('User already exists.');
+            expect(err.message).toBe('User already exists');
         }
     });
 });
