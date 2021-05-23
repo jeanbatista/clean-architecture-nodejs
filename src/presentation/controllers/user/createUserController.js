@@ -21,6 +21,8 @@ module.exports = class CreateUserController {
             
             return response.status(201).send();
         } catch (err) {
+            console.log(err.stack);
+            console.log(err.message);
             return response.status(400).json({
                 message: err.message || 'Unexpected error.'
             });

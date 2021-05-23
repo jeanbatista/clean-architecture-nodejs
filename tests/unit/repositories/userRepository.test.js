@@ -1,5 +1,5 @@
-const { UserRepository } = require('../../src/repositories');
-const { UserEntity } = require('../../src/entities');
+const { UserRepository } = require('../../../src/repositories');
+const { UserEntity } = require('../../../src/entities');
 
 const userRepository = new UserRepository();
 

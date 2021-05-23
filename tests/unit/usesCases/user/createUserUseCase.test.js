@@ -1,5 +1,5 @@
-const { UserRepository } = require('../../../src/repositories');
-const { CreateUserUseCase } = require('../../../src/usesCases/user');
+const { UserRepository } = require('../../../../src/repositories');
+const { CreateUserUseCase } = require('../../../../src/usesCases/user');
 
 describe('Testes Create User Use Case', () => {
     test('Should create user', async () => { 
