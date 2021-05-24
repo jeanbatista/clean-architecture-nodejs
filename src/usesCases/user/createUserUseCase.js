@@ -1,6 +1,11 @@
 const { UserEntity } = require('../../entities');
+const UserRepository = require('../../repositories/userRepository');
 
 module.exports = class CreateUserUseCase {
+    /**
+     * 
+     * @param {UserRepository} userRepository 
+     */
     constructor(userRepository) {
         this.userRepository = userRepository;
     }
@@ -11,7 +16,7 @@ module.exports = class CreateUserUseCase {
      */
     async execute(data) {
         const userAlreadyExists = await this.userRepository.findByEmail(data.email);
-        
+
         if (userAlreadyExists) {
             throw new Error('User already exists');
         }
